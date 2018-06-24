@@ -1,0 +1,29 @@
+
+<div class="container mt-4">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="card card-primary">
+				<div class="card-header">
+					<h3 class="card-title">Issue number: <%=@issue_number%></h3>
+				</div>
+			</div>
+		</div>
+		<% @events.each do |ev| %>
+		<div class="col-sm-6">
+			<div class="card card-default">
+				<div class="card-header">
+					<h3 class="card-title"><b>Action:</b> <%=ev.action%></h3>
+				</div>
+				<div class="card-block">
+					<p><b>Title:</b> <%=ev.title%></p>
+					<p><b>Created at:</b> <%= ev.created_at.strftime("%Y/%m/%d %H:%M:%S") %></p>
+					<p><b>Updated at:</b> <%=ev.updated_at.strftime("%Y/%m/%d %H:%M:%S")%></p>
+					<p><b>Body:</b> <%=ev.body%></p>
+				</div>
+			</div>
+		</div>
+		<%end%>
+	</div>
+</div>
+
+
